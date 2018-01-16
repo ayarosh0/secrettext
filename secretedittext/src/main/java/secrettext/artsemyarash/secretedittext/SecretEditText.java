@@ -74,49 +74,4 @@ public class SecretEditText extends EditText implements SpannedSecretEditText {
     public ArrayList<Boolean> getSecretCharsPositions() {
         return secretCharsPositions;
     }
-
-//    public class SecretTextTransformationMethod extends SecretTextWatcher implements TransformationMethod{
-//
-//        public SecretTextTransformationMethod(ArrayList<Boolean> secretCharsPositions) {
-//            super(SecretEditText.this, secretCharsPositions);
-//        }
-//
-//        @Override
-//        public CharSequence getTransformation(CharSequence source, View view) {
-//            return new SecretCharSequence(source);
-//        }
-//
-//        @Override
-//        public void onFocusChanged(View view, CharSequence sourceText, boolean focused, int direction, Rect previouslyFocusedRect) {
-//
-//        }
-//
-//        private class SecretCharSequence implements CharSequence {
-//            private final char DOT = '\u2022';
-//            private CharSequence mSource;
-//
-//            public SecretCharSequence(CharSequence mSource) {
-//                this.mSource = mSource;
-//            }
-//
-//            @Override
-//            public int length() {
-//                return mSource.length();
-//            }
-//
-//            @Override
-//            public char charAt(int index) {
-//                if (index < secretCharsPositions.size() && secretCharsPositions.get(index)) {
-//                    return DOT;
-//                } else {
-//                    return mSource.charAt(index);
-//                }
-//            }
-//
-//            @Override
-//            public CharSequence subSequence(int start, int end) {
-//                return mSource.subSequence(start, end);
-//            }
-//        }
-//    }
 }

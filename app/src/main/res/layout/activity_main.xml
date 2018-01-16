@@ -5,14 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="secrettext.artsemyarash.secrettext.MainActivity">
-    <secrettext.artsemyarash.secretedittext.SecretEditText
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="test qwerty"
-        android:inputType="textNoSuggestions"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <secrettext.artsemyarash.secretedittext.SecretEditText
+            android:id="@+id/edittext"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:inputType="textNoSuggestions"
+            android:text="test qwerty" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Teansform" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
