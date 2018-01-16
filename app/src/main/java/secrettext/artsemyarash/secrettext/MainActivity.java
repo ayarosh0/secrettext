@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                text.setText(secretEditText.getText());
+                text.setText(secretEditText.getText().toString());
             }
         });
 
