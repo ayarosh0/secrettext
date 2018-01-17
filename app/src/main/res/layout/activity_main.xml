@@ -26,10 +26,18 @@
             android:padding="10dp"
             android:text="Transform" />
 
-        <TextView
+        <secrettext.artsemyarash.secrettextview.SecretTextView
             android:id="@+id/text"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            app:secret_mask="@string/secret_mask" />
+
+        <Button
+            android:id="@+id/show_original"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Show original text" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

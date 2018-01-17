@@ -11,11 +11,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import secrettext.artsemyarash.secretedittext.SecretEditText;
+import secrettext.artsemyarash.secrettextview.SecretTextView;
 
 public class MainActivity extends AppCompatActivity {
     SecretEditText secretEditText;
     Button button;
-    TextView text;
+    Button showButton;
+    SecretTextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +25,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         secretEditText = findViewById(R.id.edittext);
         button = findViewById(R.id.button);
+        showButton = findViewById(R.id.show_original);
         text = findViewById(R.id.text);
-        text.setTransformationMethod(new SecretTextTransformationMethod(secretEditText.getSecretCharsPositions()));
+        //text.setTransformationMethod(new SecretTextTransformationMethod(secretEditText.getSecretCharsPositions()));
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 text.setText(secretEditText.getText().toString());
+                text.setSecretChars(secretEditText.getSecretCharsPositions());
+            }
+        });
+        showButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                text.showOriginalText();
             }
         });
 
@@ -36,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     public class SecretTextTransformationMethod implements TransformationMethod {
         ArrayList<Boolean> secretCharsPositions;
+
         public SecretTextTransformationMethod(ArrayList<Boolean> secretCharsPositions) {
             this.secretCharsPositions = secretCharsPositions;
         }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SecretEditText</string>
+    <string name="secret_mask">&lt;secret&gt;</string>
 </resources>
